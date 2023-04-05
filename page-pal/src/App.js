@@ -1,11 +1,7 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Home from "./components/Home";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Logout from './components/Logout/Logout';
+import Header from './components/Header';
+
 
 function App() {
 
@@ -14,13 +10,8 @@ function App() {
             <Header />
             <div className="main-content">
                 <Routes>
-                    <Route path='/' element={<Home/>}/>
-                    <Route path='/login' element={<Login/>}/>
-                    <Route path='/logout' element={<Logout/>}/>
-                    <Route path='/register' element={<Register/>}/>
                 </Routes>
             </div>
-            <Footer />
         </div>
     );
 }
