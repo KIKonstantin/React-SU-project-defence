@@ -1,0 +1,36 @@
+.bookContainer{
+    margin-top: 82px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 48px;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.createBook{
+    border-radius: 20px;
+    /* box-shadow: 0 5px 15px -4px #000; */
+    width: 300px;
+    height: 480px;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 200ms ease-in-out;
+}
+.createBook:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.icon{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:white;
+    font-size: 3rem;
+}

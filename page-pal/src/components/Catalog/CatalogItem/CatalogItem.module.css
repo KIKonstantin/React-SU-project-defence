@@ -1,0 +1,86 @@
+.catalogItem{
+    border-radius: 20px;
+    box-shadow: 0 5px 15px -4px #000;
+    width: 300px;
+    height: 480px;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.catalogItem::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1; 
+    opacity: 0; 
+    transition: opacity 0.2s ease-in-out; 
+}
+.catalogItem:hover::before {
+opacity: 1;
+z-index: 1;
+}
+
+.catalogItem img{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform .2s ease-in-out;
+}
+
+.itemsContainer{
+    color: #fff;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    transform: scale(.8);
+    transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+    width:100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.itemsContainer:hover{
+    opacity: 1;
+    transform: scale(1);
+}
+.catalogItem:hover img{
+    transform:scale(1.1);
+}
+
+.buttons{
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.buttons button{
+    border:none;
+    background-color: transparent;
+    color:white;
+    border:2px solid  var(--color-accent);
+    padding:8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.buttons button:active{
+    background-color: var(--color-accent);
+
+}
+
+.buttons a{
+    color:white;
+}

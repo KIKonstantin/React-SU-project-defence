@@ -1,6 +1,6 @@
 .headerImg{
     position: absolute;
-    z-index: -22;
+    z-index: -999;
     width: 100%;
     object-fit: cover;
     transform: translate(0px, -20px);
@@ -11,6 +11,7 @@
     color: white;
     display: flex;
     justify-content: space-between;
+
 }
 .bar1,
 .bar2,
@@ -22,6 +23,7 @@
     transition: 0.4s;
     position: relative;
     z-index: 5;
+    cursor: pointer;
 }
 
 .change .bar1 {
@@ -59,7 +61,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    animation: navMenu 0.3s linear;    
+    animation: navMenu 0.2s linear;    
 }
 
 .isProfileNavigationOpen{
@@ -74,7 +76,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    animation: navMenu 0.3s linear;    
+    animation: navMenu 0.2s linear;    
 }
 .isActive a, .isProfileNavigationOpen a{
     color: white;
@@ -83,6 +85,7 @@
 }
 
 .profileIcon{
+    cursor: pointer;
     font-size: 2rem;
     margin:6px 0;
     position: relative;
@@ -96,8 +99,13 @@
 
 
 .welcome_title {
-    font-size: 5rem;
+    font-size: 6rem;
 }
+.welcome_subtitle {
+    font-size: 0.85rem;
+}
+
+
 @keyframes navMenu {
     from{
         width:0%

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;600&display=swap');
 :root {
     --color-primary: #04395E;
     --color-secondary: #56876D;
@@ -5,7 +6,6 @@
     --default-text-color: #333333;
 
 }
-
 /* Box sizing rules */
 
 *,
@@ -13,6 +13,11 @@
 *::after {
     box-sizing: border-box;
     font-family: 'El Messiri', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color:black;
 }
 
 

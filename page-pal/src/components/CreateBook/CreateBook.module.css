@@ -1,0 +1,56 @@
+.createBookContainer{
+    position:relative;
+    width: 600px;
+    top:500px;
+    left:50%;
+    transform:translate(-50%, -50%);
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 1);
+}
+.createBookContainer h2{
+    font-family: 'Indie Flower', cursive;
+    color: #002B59;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 22px;
+}
+.createInputFields{
+    font-family: 'Indie Flower', cursive;
+    color: #002B59;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap:22px;
+    font-size: 1.2rem;
+    width: 90%;
+    margin-left: 5%;
+
+}
+.createInputFields input{
+    font-size:2rem;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    text-align: center;
+    outline: none;
+}
+
+.createInputFields textarea{
+    border: none;
+    resize: none;
+    font-size: 1.4rem;
+    border: 2px solid black;
+    outline: none;
+}
+
+.submitBtn{
+    margin: 22px 0;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+.submitBtn:hover{
+    color: #002B59;
+    background-color: rgba(0, 0, 0, 0.4);
+}
