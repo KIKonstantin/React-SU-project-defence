@@ -1,0 +1,37 @@
+.addNoteContainer{
+    max-width:600px;
+    width: 100%;
+    position: relative;
+    left: 500px;
+    padding-bottom: 88px;
+}
+
+.noteForm{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    font-family: 'Indie Flower', cursive;
+    color: #002B59;
+}
+.noteForm input{
+
+}
+.noteForm textarea{
+    resize:none;
+    font-size:1.4rem;
+    outline: none;
+}
+
+.noteSubmitBtn{
+    margin: 22px 0;
+    border: none;
+    border-bottom: 2px solid black;
+    cursor: pointer;
+    font-size:2rem;
+    background-color: transparent;
+    transition: background-color 0.5s ease, color .5s ease;
+}
+.noteSubmitBtn:hover{
+    color: #002B59;
+    background-color: rgba(0, 0, 0, 0.4);
+}

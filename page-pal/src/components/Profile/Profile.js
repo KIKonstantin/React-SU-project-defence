@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAuthContext } from "../../contexts/AuthContext";
-
+import styles from  './Profile.module.css';
 export default function Profile(){
     // TODO: send get request to all _owner: favorite books and added comments
     // TODO: send a put request to users profile
@@ -9,6 +9,6 @@ export default function Profile(){
         onProfile();
     }, [onProfile]);
     return(
-        <h1 style={{color:'white',fontSize:'3rem'}}>My PROFILE</h1>
+        <h1 id="profileTitle" className={styles.title}>My PROFILE</h1>
     )
 }

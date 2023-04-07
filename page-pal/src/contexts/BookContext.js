@@ -55,7 +55,7 @@ export const BookProvider = ({
     )
 }
 
-export const useBookCotext = () => {
+export const useBookContext = () => {
     const context = useContext(BookContext);
     return context;
 }

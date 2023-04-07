@@ -1,13 +1,24 @@
-.bookContainer{
-    position: absolute;
-    top: 450px;
-    left: 50%;
+
+.bookDetailsContainer{
+  position: relative;
+  left: 50%;
+  /* transform: translate(-50%); */
+  width: 1200px;
+  min-height: 800px;
+  top:300px;
+  left: 250px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1 2;
+
+}
+
+.bookContainer{ 
+    width: 100%;
     display: flex;
     gap: 86px;
-    width: 1200px;
     padding-bottom: 48px;
     background-color: white;
-    transform: translate(-50%);
     border-radius: 12px;
 }
 
@@ -22,17 +33,18 @@
     flex-direction: column;
     justify-content: space-evenly;
 }
-.guestButtons{
+
+.isAuthenticatedButtons{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 64px;
 }
-
-.buttons button{
+.isAuthenticatedButtons button{
     background-color: var(--color-accent);
     border:none;
     border-radius: 12px;
-    padding: 24px 48px;
+    padding: 24px 36px;
     color:white;
     font-size: 1.2rem;
     cursor: pointer;
@@ -41,5 +53,27 @@
 }
 .buttons button:hover{
     opacity: 1;
+}
 
+.isOwnerButtons{
+    width: 90%;
+    display: flex;
+    justify-content: end;
+    gap:24px;
+}
+
+.isOwnerButtons button, .isOwnerButtons a{
+    background-color: var(--color-secondary);
+    border:none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    color:white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity .2s ease-in-out;
+}
+
+.addedToFavorites{
+    background-color: green;
 }

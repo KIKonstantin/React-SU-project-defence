@@ -1,5 +1,5 @@
 import { useAuthContext } from "../../contexts/AuthContext";
-import { useBookCotext } from "../../contexts/BookContext";
+import { useBookContext } from "../../contexts/BookContext";
 import styles from './Catalog.module.css';
 import CatalogItem from "./CatalogItem/CatalogItem";
 import CreateBook from "../CreateBook";
@@ -8,7 +8,7 @@ import {faPlus} from "@fortawesome/free-solid-svg-icons"
 import { Link } from "react-router-dom";
 export default function Catalog(){
     const { isAuthenticated } = useAuthContext();
-    const { books } = useBookCotext();
+    const { books } = useBookContext();
     return(
         <>
         <div className={styles.bookContainer}>

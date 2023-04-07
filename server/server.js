@@ -1360,12 +1360,14 @@
                 "imageUrl": "/images/ZombieLang.png",
                 "summary": "With it’s own unique story, set between the events of the first movie, Zombieland: Double Tap- Road Trip is a ridiculously fun top-down twin-stick shooter featuring local co-op multiplayer for up to four players. Play as your favorite heroes from the original — Tallahassee, Columbus, Wichita and Little Rock — as well as new unlockable characters from the upcoming sequel.  The game embraces the game-like elements seen in the film by  incorporating everything from the “Rules” to “Zombie Kill of the Week”.  Use your special abilities, an arsenal of weapons and the essential Zombieland rules for survival to stay alive against huge numbers of uniquely grotesque and dangerous undead monstrosities in Zombieland: Double Tap- Road Trip’s story-based campaign mode, wave-based horde mode, and boss battles.",
                 "_createdOn": 1617194295474,
+                
             }
         },
         comments: {
         },
         books: {
                 "3f2d34c1-5e3b-4f8e-a1b7-906e982beab6": {
+                    "_ownerId": '35c62d76-8152-4626-8712-eeb96381bea8',
                     "title": "The Great Gatsby",
                     "author": "F. Scott Fitzgerald",
                     "genre": "Fiction",
@@ -1376,6 +1378,7 @@
                 },
             
                 "dd4c68b1-7219-45d2-b383-eb5a02a5c5bf": {
+                    "_ownerId": '35c62d76-8152-4626-8712-eeb96381bea8',
                     "title": "The Hitchhiker's Guide to the Galaxy",
                     "author": "Douglas Adams",
                     "genre": "Science Fiction",
@@ -1385,6 +1388,7 @@
                     "_createdOn": "2023-04-05T11:15:00.000Z"
                 },
                 "b5b5cb8f-7a1c-47c2-91aa-9288f6b63410": {
+                    "_ownerId": '35c62d76-8152-4626-8712-eeb96381bea8',
                     "title": "The Catcher in the Rye",
                     "author": "J.D. Salinger",
                     "genre": "Fiction",
@@ -1394,6 +1398,7 @@
                     "_createdOn": "2023-04-05T11:30:00.000Z"
                 },
                 "7d1878f5-5c5c-4c35-bb01-6249c2e7d58b": {
+                    "_ownerId": '35c62d76-8152-4626-8712-eeb96381bea8',
                     "title": "To Kill a Mockingbird",
                     "author": "Harper Lee",
                     "genre": "Fiction",
@@ -1401,7 +1406,33 @@
                     "imageUrl": "https://cdn.britannica.com/21/182021-050-666DB6B1/book-cover-To-Kill-a-Mockingbird-many-1961.jpg",
                     "summary": "The story of a young girl growing up in the South during the 1930s, and her father's defense of a black man accused of rape.",
                     "_createdOn": "2023-04-05T11:45:00.000Z"
+                },
+                "bca9cd91-2598-4d13-836f-ad939bc064ed": {
+                    "_ownerId": 'f982a42f-335c-4d74-87ff-6ef7a10ff4f9',
+                    "title": "The Return of the Gods",
+                    "author": "Jonathan Cahn",
+                    "genre": "Fantasy",
+                    "pages": 256,
+                    "imageUrl": "https://m.media-amazon.com/images/I/913UqrSJf6L.jpg",
+                    "summary": "NEW YORK TIMES Best SellerFrom the author that brought you 6 New York Times best-selling books including The Harbinger, The Book of Mysteries, The Oracle and The Harbinger IIIs it possible that behind what is taking place in America and the world lies a mystery that goes back to the gods of the ancient world…and that they now have returned?",
+                    "_createdOn": "1680845018429"
+                },
+                "beefea72-8cc4-4ca8-b656-cd8a6bcdd332": {
+                    "_ownerId": 'f982a42f-335c-4d74-87ff-6ef7a10ff4f9',
+                    "title": "Teenage Mutant Ninja Turtles: The Last Ronin",
+                    "author": "Kevin Eastman",
+                    "genre": "Comic",
+                    "pages": 224,
+                    "imageUrl": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81kQlzqKP-L._AC_UF1000,1000_QL80_.jpg",
+                    "summary": "A New York Times Bestseller! Who is the Last Ronin? In a future, battle-ravaged New York City, a lone surviving Turtle embarks on a seemingly hopeless mission seeking justice for the family he lost. From legendary TMNT co-creators Kevin Eastman and Peter Laird, get ready for the final story of the Teenage Mutant Ninja Turtles three decades in the making!",
+                    "_createdOn": "1680845018429"
                 }
+
+        },
+        notes: {
+        },
+        favorites: {
+            
         }
     };
     var rules$1 = {

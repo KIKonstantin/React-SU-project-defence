@@ -15,6 +15,8 @@ import Catalog from './components/Catalog/Catalog';
 import BookDetails from './components/BookDetails';
 import CreateBook from './components/CreateBook/CreateBook';
 import Profile from './components/Profile/Profile';
+import EditBook from './components/EditBook/EditBook';
+import { Favorites } from './components/Favorites/Favorites';
 
 function App() {
 
@@ -35,6 +37,9 @@ function App() {
                     <Route path='/catalog' element={<Catalog />} />
                     <Route path='/create-book' element={<CreateBook />} />
                     <Route path='/catalog/:bookId' element={<BookDetails />} />
+                    <Route path='/catalog/:bookId/edit' element={<EditBook />} />
+                    <Route path='/favorites' element={<Favorites />} />
+                    
                 </Routes>
             </div>
         </div>
