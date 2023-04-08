@@ -2,7 +2,6 @@ import { useAuthContext } from "../../contexts/AuthContext";
 import { useBookContext } from "../../contexts/BookContext";
 import styles from './Catalog.module.css';
 import CatalogItem from "./CatalogItem/CatalogItem";
-import CreateBook from "../CreateBook";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons"
 import { Link } from "react-router-dom";

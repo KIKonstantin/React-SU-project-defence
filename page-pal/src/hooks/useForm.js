@@ -1,8 +1,6 @@
 import { useState } from "react";
-
 export const useForm = (initialValues, onSubmitHandler) => {
     const [values, setValues] = useState (initialValues);
-
     const changeHandler = (e) => {
         setValues(state => (
             {
@@ -25,11 +23,13 @@ export const useForm = (initialValues, onSubmitHandler) => {
         setValues(newValues);
     }
 
+
+
     return {
         values,
         changeHandler,
         changeValues,
-        onSubmit
+        onSubmit,
     }
 
 };

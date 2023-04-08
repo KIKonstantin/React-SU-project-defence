@@ -1,9 +1,5 @@
 .container{
     position: relative;
-    width: 80vw;
-    max-width: 700px;
-    height: 80vh;
-    max-height: 700px;
     left:50%;
     overflow: hidden;
     transform: translate(-50%,0);
@@ -42,4 +38,20 @@
   }
   .join a:hover{
     color:var(--color-accent);
+  }
+  .welcome{
+    font-size: 2rem;
+    display: grid;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    padding: 12px;
+    color:var(--color-primary)
+  }
+
+  .newestBooks{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

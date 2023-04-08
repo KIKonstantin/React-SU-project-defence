@@ -1,16 +1,17 @@
 import { useParams } from "react-router-dom";
 import { useBookContext } from "../../contexts/BookContext";
 import { bookServiceFactory } from "../../services/bookService";
-import { useAuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
 import { useEffect } from "react";
 import styles from './EditBook.module.css'
 
+import { useNavigate } from "react-router-dom"
 export default function EditBook() {
-  const { token }  = useAuthContext();
   const { onBookEditSubmit } = useBookContext();
-  const { bookId } = useParams();
+     const { bookId } = useParams();
+     const navigate = useNavigate();
     const bookService = bookServiceFactory();
+    
     const { values, changeHandler, onSubmit, changeValues } = useForm({
         _id: '',
         title: '',
@@ -24,6 +25,9 @@ export default function EditBook() {
     useEffect(() => {
         bookService.getOne(bookId)
         .then(result => {
+            if(result.error){
+                navigate('/not-found')
+            }
             changeValues(result);
         }) 
     }, [bookId])

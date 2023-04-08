@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import styles from './Login.module.css'
 import { useAuthContext } from '../../contexts/AuthContext'
 import { useForm } from '../../hooks/useForm';
+import { MessageBox } from '../common/MessageBox';
 
 const LoginFormKeys = {
     Email:'email',
@@ -10,7 +11,7 @@ const LoginFormKeys = {
 }
 
 export default function Login(){
-    const { onLoginSubmit } = useAuthContext()
+    const { onLoginSubmit, errors } = useAuthContext()
     const {values, changeHandler, onSubmit } = useForm({
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: '',
@@ -46,7 +47,9 @@ export default function Login(){
                     <span>If you don't have profile click <Link to="/register">here</Link></span>
                 </p>
                 </div>
-
+                {errors && errors.map((m, i) =>(
+                  <MessageBox message={m} id={i} />
+            ))}
                 </form>
             </div>
         </section>

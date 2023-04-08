@@ -1,9 +1,10 @@
 import { useBookContext } from "../../contexts/BookContext";
 import { useForm } from "../../hooks/useForm";
 import styles from './CreateBook.module.css';
+import { MessageBox } from "../common/MessageBox";
 
 export default function CreateBook(){
-    const { onCreateBookSubmit } = useBookContext();
+    const { onCreateBookSubmit, errors } = useBookContext();
     const { values, changeHandler, onSubmit} = useForm({
         title: '',
         author: '',
@@ -11,8 +12,9 @@ export default function CreateBook(){
         summary: '',
         genre: '',
         pages: '',
+        _createdOn: new Date().getTime()
     }, onCreateBookSubmit);
-    // TODO: Validate Data
+
     return(
         <section className={styles.createBookContainer}>
             <form id="create" method="POST" onSubmit={onSubmit}>
@@ -43,13 +45,25 @@ export default function CreateBook(){
                     onChange={changeHandler}
                     />
                     <label htmlFor="genre">Book's Ganre: </label>
-                    <input 
-                    type="text"
-                    name="genre"
-                    placeholder="Enter Book's Ganre"
+                    <select
+                    id="favoriteGenre"
+                    name= "genre"
                     value={values.genre}
                     onChange={changeHandler}
-                    />
+                    >
+                    <option >Select your favorite genre</option>
+                    <option value="mystery">Mystery</option>
+                    <option value="romance">Romance</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Historical">Historical Fiction</option>
+                    <option value="Young Adult">Young Adult</option>
+                    <option value="Memoir">Memoir</option>
+                    <option value="Biography">Biography</option>
+                    <option value="Self Improvement">Self Improvement</option>
+                </select>
                     <label htmlFor="summary">Book's Summary: </label>
                     <textarea 
                     type="text"
@@ -70,6 +84,9 @@ export default function CreateBook(){
                     <input type="submit" className={styles.submitBtn} value="Post your new passion" />
                 </div>
             </form>    
+            {errors && errors.map((m, i) =>(
+                  <MessageBox message={m} id={i} />
+            ))}
         </section>
     )
 }

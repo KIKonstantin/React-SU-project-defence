@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { authServiceFactory } from "../services/authService";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useLocalStorage";
@@ -10,34 +10,50 @@ export const AuthProvider = ({  // --> Component
 }) => {
     const [auth, setAuth] = useLocalStorage('auth', {});
     const authService =  authServiceFactory(auth.accessToken);
+    let errors = [];
     const navigate = useNavigate();
 
+
     const onLoginSubmit = async (data) => {
+        if(data.email === '' || data.password === ''){
+            errors.push('All fields are required!')
+        }
+        if(errors.length > 0) {
+            return data;
+        } 
         try {
             const result = await authService.login(data);
             setAuth(result);
             navigate('/catalog');
         } catch (error) {
-            console.error(error);
+            alert(error.message);
         }
         
     };
     const onRegisterSubmit = async (values) => {
-        const { confirmPassword, ...registerData } = values;
-        if (confirmPassword !== registerData.password) {
-            return;
+    const {confirmPassword, ...registerData } = values;
+        if(
+            registerData.username === '' ||
+            registerData.email === '' ||
+            registerData.genre === '' ||
+            registerData.password === '' ||
+            confirmPassword === ''
+        ){
+            errors.push('All fields except photo url are required!')
+        }else if(confirmPassword !== registerData.password){
+            errors.push('Passwords mismatch')
         }
+        if(errors.length > 0) {
+            return registerData;
+        } 
         try {
             const result = await authService.register(registerData);
             navigate('/catalog');
             setAuth(result);
         } catch (error) {
-            console.error(error);
+            alert(error.message)
         }
     };
-    const onProfile = async() => {
-        await authService.me();
-    }
     const onLogout = async () => {
         await authService.logout();
 
@@ -48,7 +64,7 @@ export const AuthProvider = ({  // --> Component
         onLoginSubmit,
         onRegisterSubmit,
         onLogout,
-        onProfile,
+        errors,
         userId: auth._id,
         token: auth.accessToken,
         userEmail: auth.email,

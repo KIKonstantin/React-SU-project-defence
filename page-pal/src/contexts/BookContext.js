@@ -10,6 +10,7 @@ export const BookProvider = ({
     const [books, setBooks] = useState([]);
     const [auth, setAuth] = useState({});
     const bookService = bookServiceFactory(auth.accessToken);
+    let errors = [];
 
     useEffect(() => {
         bookService.getAll()
@@ -19,21 +20,57 @@ export const BookProvider = ({
     }, [])
 
     const onCreateBookSubmit = async (data) => {
-        const newBook = await bookService.create(data);
-        setBooks(state => [...state, newBook]);
-        navigate('/catalog');
+        if(
+            data.title === '' || data.author === '' ||
+            data.imageUrl === '' || data.genre === '' ||
+            data.summary === '' || data.pages === ''
+          ){
+            errors.push('All fields are required!')
+        }
+        if(errors.length > 0) {
+            return data;
+        } 
+        try {
+            const newBook = await bookService.create(data);
+            setBooks(state => [...state, newBook]);
+            navigate('/catalog');
+        } catch (error) {
+            alert(error.message)
+        }
+
     };
 
     const deleteBook = (bookId) => {
-        const updatedBooksCatalog = books.filter(b => b._id !== bookId);
-        setBooks(updatedBooksCatalog);
+        try {
+            const updatedBooksCatalog = books.filter(b => b._id !== bookId);
+            setBooks(updatedBooksCatalog);
+        } catch (error) {
+            alert(error.message)
+            
+        }
     }
     const onBookEditSubmit = async (values) => {
-        const result = await bookService.edit(values._id, values);
-
-        setBooks(state => state.map(x => x._id === values._id ? result : x))
-
-        navigate(`/catalog/${values._id}`);
+        if(
+            values.title === '' || values.author === '' ||
+            values.imageUrl === '' || values.genre === '' ||
+            values.summary === '' || values.pages === ''
+          ){
+            errors.push('All fields are required!')
+        }
+        if(errors.length > 0) {
+            return values;
+        } 
+        try {
+            
+            const result = await bookService.edit(values._id, values);
+    
+            setBooks(state => state.map(x => x._id === values._id ? result : x))
+    
+            navigate(`/catalog/${values._id}`);
+        } catch (error) {
+            alert(error.message)
+            
+        }
     };
 
     const getBook = (bookId) => {
@@ -42,6 +79,7 @@ export const BookProvider = ({
 
     const contextValues = {
         books,
+        errors,
         onCreateBookSubmit,
         deleteBook,
         onBookEditSubmit,

@@ -4,11 +4,14 @@ import { bookServiceFactory } from "../../services/bookService";
 import { useEffect, useReducer, useState } from "react";
 import * as noteService from '../../services/noteService';
 import * as favoritesService from '../../services/favoritesService'
+import * as likeService from '../../services/likeService'
 import { bookReducer } from '../../reducers/bookReducer';
 
 import AddNote from "./AddNote";
 import styles from './BookDetails.module.css';
 import { useBookContext } from "../../contexts/BookContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function BookDetails(){
@@ -20,23 +23,42 @@ export default function BookDetails(){
     const navigate = useNavigate();
     const [book, dispatch] = useReducer(bookReducer, {});
     const [isAdded, setIsAdded] = useState(false);
-
+    const [isLiked, setIsLiked] = useState(false);
     useEffect(() => {
+        try {
         Promise.all([
             bookService.getOne(bookId),
             noteService.getAll(bookId),
+            favoritesService.checkIfAdded(userId, bookId),
+            likeService.checkIfLikedByUser(userId, bookId),
+            likeService.countLikes(bookId)
         ])
-        .then(([bookData, notes, added]) => {
+        .then(([bookData, notes, isAdded, isLiked]) => {
+            if(bookData.error?.message){
+                navigate('/not-found')
+            }
             const bookState = ({
                 ...bookData,
                 notes,
             });
+
+            setIsAdded(isAdded);
+            setIsLiked(isLiked)
             dispatch({
                 type: 'BOOK_FETCH',
                 payload: bookState,
             })
 
         })
+            
+        } catch (error) {
+            if (error.response && error.response.status === 404) {
+                navigate('/not-found');
+              } else {
+                console.log(error);
+                navigate('/catalog');
+              }
+        }            
     }, [bookId])
 
 
@@ -72,19 +94,15 @@ export default function BookDetails(){
             console.log(error)
         }
     }
-    useEffect(() => {
-        const fetchIsAdded = async () => {
-            try {
-                const result = await favoritesService.checkIfAdded(userId);
-                setIsAdded(result);
-            } catch (error) {
-                console.log(error);
-            }
-        };
     
-        fetchIsAdded();
-    }, [userId]);
-
+    const onLike = async() => {
+        try{
+            await likeService.addLike(bookId);
+            setIsLiked(true);
+        }catch (error){
+            console.log(error);
+        }
+    }
 
 
     return(
@@ -109,8 +127,11 @@ export default function BookDetails(){
                        ( <button className={styles.favorites} onClick={onAddToFavorites}>Add to favorites</button>)
 
                         }
-                            <button className={styles.rate}>Rate</button>
                             <button className={styles.comment} onClick={() => setWantsNote(!wantsNote)}>Leave a note</button>
+                            <button className={styles.rate} onClick={!isLiked ? onLike : undefined} style={{backgroundColor: isLiked && 'green'}}>
+                                <FontAwesomeIcon icon={faThumbsUp} />
+                                {book.likes}
+                            </button>
                         </div>
                         {/* TODO: isOwner buttons */}
                            {isOwner && (

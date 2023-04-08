@@ -5,7 +5,7 @@
   /* transform: translate(-50%); */
   width: 1200px;
   min-height: 800px;
-  top:300px;
+  top:100px;
   left: 250px;
   display: flex;
   flex-direction: column;
@@ -75,5 +75,52 @@
 }
 
 .addedToFavorites{
-    background-color: green;
+    background-color: green!important;
 }
+
+.noteContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+  
+  .noteContainer h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  
+  .noteContainer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .noteContainer .note {
+    margin: 8px;
+    padding: 16px;
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .noteContainer .note p {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .noteContainer .note .noteAuthor {
+    font-weight: bold;
+  }
+  
+  .noteContainer .noNotes {
+    font-size: 1.2rem;
+    margin-top: 16px;
+  }
+  

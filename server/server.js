@@ -1374,7 +1374,7 @@
                     "pages": 180,
                     "imageUrl": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71FTb9X6wsL._AC_UF1000,1000_QL80_.jpg",
                     "summary": "The story of Jay Gatsby, a millionaire who throws lavish parties in the hope of winning back his lost love, Daisy Buchanan.",
-                    "_createdOn": "2023-04-05T10:30:00.000Z"
+                    "_createdOn": "1617194295474"
                 },
             
                 "dd4c68b1-7219-45d2-b383-eb5a02a5c5bf": {
@@ -1385,7 +1385,7 @@
                     "pages": 208,
                     "imageUrl": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81XSN3hA5gL._AC_UF1000,1000_QL80_.jpg",
                     "summary": "The story of an unwitting human and his alien friend as they journey through space after the destruction of Earth.",
-                    "_createdOn": "2023-04-05T11:15:00.000Z"
+                    "_createdOn": "1617194210928"
                 },
                 "b5b5cb8f-7a1c-47c2-91aa-9288f6b63410": {
                     "_ownerId": '35c62d76-8152-4626-8712-eeb96381bea8',
@@ -1395,7 +1395,7 @@
                     "pages": 224,
                     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/The_Catcher_in_the_Rye_%281951%2C_first_edition_cover%29.jpg/800px-The_Catcher_in_the_Rye_%281951%2C_first_edition_cover%29.jpg",
                     "summary": "The story of Holden Caulfield, a disillusioned teenager who wanders around New York City after being expelled from school.",
-                    "_createdOn": "2023-04-05T11:30:00.000Z"
+                    "_createdOn": "1617194128618"
                 },
                 "7d1878f5-5c5c-4c35-bb01-6249c2e7d58b": {
                     "_ownerId": '35c62d76-8152-4626-8712-eeb96381bea8',
@@ -1405,7 +1405,7 @@
                     "pages": 336,
                     "imageUrl": "https://cdn.britannica.com/21/182021-050-666DB6B1/book-cover-To-Kill-a-Mockingbird-many-1961.jpg",
                     "summary": "The story of a young girl growing up in the South during the 1930s, and her father's defense of a black man accused of rape.",
-                    "_createdOn": "2023-04-05T11:45:00.000Z"
+                    "_createdOn": "1617194158618"
                 },
                 "bca9cd91-2598-4d13-836f-ad939bc064ed": {
                     "_ownerId": 'f982a42f-335c-4d74-87ff-6ef7a10ff4f9',
@@ -1432,7 +1432,8 @@
         notes: {
         },
         favorites: {
-            
+        },
+        likes: {
         }
     };
     var rules$1 = {

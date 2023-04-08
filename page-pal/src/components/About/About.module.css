@@ -1,0 +1,54 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}  
+  .text {
+    font-size: 1.6rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 3rem;
+  }
+  
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .feature {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .featureTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .featureText {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
