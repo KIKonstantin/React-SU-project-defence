@@ -57,7 +57,6 @@ export default function BookDetails(){
             if (error.response && error.response.status === 404) {
                 navigate('/not-found');
               } else {
-                console.log(error);
                 navigate('/catalog');
               }
         }            
@@ -93,7 +92,7 @@ export default function BookDetails(){
             await favoritesService.addFavorite(bookId);
             setIsAdded(true)
         }catch (error){
-            console.log(error)
+            alert(error)
         }
     }
     
@@ -103,7 +102,7 @@ export default function BookDetails(){
             setLikes(likes+1)
             setIsLiked(true);
         }catch (error){
-            console.log(error);
+            alert(error);
         }
     }
 
@@ -136,7 +135,6 @@ export default function BookDetails(){
                                 <FontAwesomeIcon icon={faThumbsUp} />
                             </button>
                         </div>
-                        {/* TODO: isOwner buttons */}
                            {isOwner && (
                             <div className={styles.isOwnerButtons}>
                                 <Link to={`/catalog/${book._id}/edit`} className="button">Edit</Link>
@@ -148,7 +146,7 @@ export default function BookDetails(){
                     </div>
                 </section>
             </article>
-            <article className={styles.noteContainer}>
+           {isAuthenticated && (<article className={styles.noteContainer}>
                 <h2>Users Notes: </h2>
                 <ul>
                     {book.notes && Object.values(book.notes).map(n => (
@@ -158,7 +156,7 @@ export default function BookDetails(){
                     ))}
                 </ul>
                 {(!book.notes?.length && (<p>Be the first to leave a note.</p>))}
-            </article>
+            </article>)}
             {wantsNote && <AddNote onNoteSubmit={onNoteSubmit} />}
         </section>
     );

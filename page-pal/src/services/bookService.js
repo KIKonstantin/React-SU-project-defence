@@ -12,9 +12,7 @@ export const bookServiceFactory = (token) => {
     const lastAdded = async () => {
         const searchQuery = encodeURIComponent(`_createdOn desc`);
         try {
-            console.log(`${url}?sortBy=${searchQuery}`);
           const result = await request.get(`${url}?sortBy=${searchQuery}`);
-          console.log(result)
           const lastThreeBooks = result.slice(0, 3);
           return lastThreeBooks;
         } catch (error) {

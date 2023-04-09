@@ -5,9 +5,6 @@ import styles from  './Profile.module.css';
 // import { useMessageBox } from "../../contexts/MessageBoxContext";
 
 export default function Profile(){
-    // TODO: send get request to all _owner: added comments
-    // TODO: send a put request to users profile
-
 
     const { token } = useAuthContext();
     const [userInfo, setUserInfo] = useState({});
@@ -18,7 +15,6 @@ export default function Profile(){
         authService.me(token)
         .then(result => setUserInfo({...result}))
     }, []);
-    console.log(userInfo)
     return(
         <div className={styles.container}>
         <div className={styles.header}>

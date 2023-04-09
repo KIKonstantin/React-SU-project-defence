@@ -19,7 +19,6 @@ export default function CatalogItem({
                     </div>
                     <p style={{color:'white',textOverflow: 'ellipsis', overflow: 'hidden', fontSize:'0.9rem' }}>{summary}</p>
                     <div className={styles.buttons}>
-                      {isAuthenticated &&  (<button>Like</button>)}
                         <Link to={_id}>Details</Link>
                     </div>
                 </div>

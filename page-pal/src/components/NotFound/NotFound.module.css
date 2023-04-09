@@ -5,13 +5,13 @@
     text-align: center;
   }
   
-  h1 {
+  .container h1 {
     font-size: 5rem;
     color: #002B59;
     margin-bottom: 20px;
   }
   
-  p {
+  .container p {
     font-size: 2rem;
     color: #002B59;
     margin-bottom: 40px;
