@@ -16,14 +16,11 @@ export default function Login(){
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: '',
     }, onLoginSubmit);
-    
     return(
         <section className={styles.loginSection}>
-            <div className={styles.loginform}>
                 <form id='login' method="post" onSubmit={onSubmit}>
                 <div className={styles.loginformInput}>
                     <h1>Login</h1>
-                {/* <label htmlFor="email">Email:</label> */}
                 <input
                     type="email"
                     id="email"
@@ -32,8 +29,6 @@ export default function Login(){
                     value={values[LoginFormKeys.Email]}
                     onChange={changeHandler}
                 />
-                {/* <label htmlFor="username">Username:</label> */}
-                {/* <label htmlFor="login-pass">Password:</label> */}
                 <input
                     type="password"
                     id="login-password"
@@ -51,7 +46,6 @@ export default function Login(){
                   <MessageBox message={m} id={i} />
             ))}
                 </form>
-            </div>
         </section>
     )
 

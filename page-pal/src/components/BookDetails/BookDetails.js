@@ -24,6 +24,7 @@ export default function BookDetails(){
     const [book, dispatch] = useReducer(bookReducer, {});
     const [isAdded, setIsAdded] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
+    const [likes, setLikes] = useState(0);
     useEffect(() => {
         try {
         Promise.all([
@@ -33,7 +34,7 @@ export default function BookDetails(){
             likeService.checkIfLikedByUser(userId, bookId),
             likeService.countLikes(bookId)
         ])
-        .then(([bookData, notes, isAdded, isLiked]) => {
+        .then(([bookData, notes, isAdded, isLiked, likes]) => {
             if(bookData.error?.message){
                 navigate('/not-found')
             }
@@ -44,6 +45,7 @@ export default function BookDetails(){
 
             setIsAdded(isAdded);
             setIsLiked(isLiked)
+            setLikes(likes)
             dispatch({
                 type: 'BOOK_FETCH',
                 payload: bookState,
@@ -98,6 +100,7 @@ export default function BookDetails(){
     const onLike = async() => {
         try{
             await likeService.addLike(bookId);
+            setLikes(likes+1)
             setIsLiked(true);
         }catch (error){
             console.log(error);
@@ -115,6 +118,7 @@ export default function BookDetails(){
                         <p style={{fontSize:'1.4rem'}}>{book.summary}</p>
                         <p style={{fontSize:'1.3rem', marginTop:'12px'}}>Ganre: {book.genre}</p>
                         <p>pages: {book.pages}</p>
+                        <p>likes: {likes}</p>
                     </div>
                     <div className={styles.buttons}>
                     {isAuthenticated &&  ( 
@@ -130,7 +134,6 @@ export default function BookDetails(){
                             <button className={styles.comment} onClick={() => setWantsNote(!wantsNote)}>Leave a note</button>
                             <button className={styles.rate} onClick={!isLiked ? onLike : undefined} style={{backgroundColor: isLiked && 'green'}}>
                                 <FontAwesomeIcon icon={faThumbsUp} />
-                                {book.likes}
                             </button>
                         </div>
                         {/* TODO: isOwner buttons */}

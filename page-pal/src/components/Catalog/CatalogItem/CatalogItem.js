@@ -12,12 +12,12 @@ export default function CatalogItem({
         <article>
                 <div className={styles.catalogItem}>
                 <img src={imageUrl} alt={`image of ${title}`} />
-                <div className={styles.itemsContainer}>
+                <div className={styles.catalogItemsContainer}>
                     <div>
                         <h2>{title}</h2>
                         <h3>{author}</h3>
                     </div>
-                    <p style={{textOverflow: 'ellipsis', overflow: 'hidden' }}>{summary}</p>
+                    <p style={{color:'white',textOverflow: 'ellipsis', overflow: 'hidden', fontSize:'0.9rem' }}>{summary}</p>
                     <div className={styles.buttons}>
                       {isAuthenticated &&  (<button>Like</button>)}
                         <Link to={_id}>Details</Link>

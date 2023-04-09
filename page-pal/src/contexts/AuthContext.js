@@ -23,6 +23,12 @@ export const AuthProvider = ({  // --> Component
         } 
         try {
             const result = await authService.login(data);
+            if(result.error?.message === 'Forbidden'){
+                throw new Error('User was not found!')
+            }
+            if(result.error){
+                throw new Error(result.error)
+            }
             setAuth(result);
             navigate('/catalog');
         } catch (error) {
@@ -48,6 +54,9 @@ export const AuthProvider = ({  // --> Component
         } 
         try {
             const result = await authService.register(registerData);
+            if(result.error){
+                throw new Error(result.error)
+            }
             navigate('/catalog');
             setAuth(result);
         } catch (error) {
@@ -55,9 +64,14 @@ export const AuthProvider = ({  // --> Component
         }
     };
     const onLogout = async () => {
-        await authService.logout();
+        try {
+            await authService.logout();
+            setAuth({});
+            
+        } catch (error) {
+            alert(error.message)
+        }
 
-        setAuth({});
     };
 
     const contextValue = { 

@@ -32,19 +32,18 @@ export default function Home() {
       </div>
 
         ) : (
-          <div className={styles.container} style={{height:'500px', width:'500px'}}>
-
-            <div className={styles.bookWrapper}>
-              <img
-                className={styles.book}
-                src="images/book.png"
-                alt="bookhero"
-              />
-            </div>
+          <div className={styles.container} style={{height:'200px', width:'500px', margin:"120px 0", borderRadius:'28px'}}>
             <div className={styles.sectionWrapper}>
               <section className={styles.join}>
-                <Link to="/login">Log in</Link>
-                <Link to="/register">Sign Up</Link>
+              <div className={styles.linkContainer}>
+                <Link to="/login" >Log in</Link>
+                <p style={{fontSize:'0.7rem'}}>and collect your favorite books</p>
+                </div>
+                or
+                <div className={styles.linkContainer}>
+                <Link to="/register" >Sign Up</Link>
+                <p style={{fontSize:'1rem'}}>and join us</p>
+                </div>
               </section>
             </div>
           </div>

@@ -1,0 +1,55 @@
+.messageBox {
+    position:absolute;
+    width: 500px;
+  
+    background-color: #228015;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .messageBox:before {
+    content: '';
+    display: inline-block;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 20px;
+  }
+  
+  .messageBox.error:before {
+    background-color: #f44336;
+  }
+  
+  .messageBox.success:before {
+    background-color: #4caf50;
+  }
+  
+  .messageBox.warning:before {
+    background-color: #ff9800;
+  }
+  
+  .messageBox.info:before {
+    background-color: #2196f3;
+  }
+  
+  .messageBox.error {
+    border-color: #f44336;
+  }
+  
+  .messageBox.success {
+    border-color: #4caf50;
+  }
+  
+  .messageBox.warning {
+    border-color: #ff9800;
+  }
+  
+  .messageBox.info {
+    border-color: #2196f3;
+  }
+  
+  

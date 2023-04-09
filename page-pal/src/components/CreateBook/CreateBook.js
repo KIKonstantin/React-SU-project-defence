@@ -51,7 +51,7 @@ export default function CreateBook(){
                     value={values.genre}
                     onChange={changeHandler}
                     >
-                    <option >Select your favorite genre</option>
+                    <option >Select your book genre</option>
                     <option value="mystery">Mystery</option>
                     <option value="romance">Romance</option>
                     <option value="Science Fiction">Science Fiction</option>

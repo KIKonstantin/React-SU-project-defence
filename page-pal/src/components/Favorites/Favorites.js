@@ -21,7 +21,7 @@ export const Favorites = () => {
    
     return (
       <div className={styles.favorites}>
-      {favoritesList.map((x) => (
+        {favoritesList.length ? (favoritesList.map((x) => (
       <div key={x._id} className={styles.book}>
         <Link to={`/catalog/${x._id}`}  className={styles.bookImage}>
           <img src={x.imageUrl} alt={x.title} />
@@ -31,7 +31,14 @@ export const Favorites = () => {
           <p className={styles.bookAuthor}>By ${x.author}</p>
         </div>
       </div>
-      ))}
+      ))) : (
+        <div className={styles.noFavoritesContainer}>
+          <h1 style={{textAlign:'center', backgroundColor:'white', padding:'12px', borderRadius:'8px'}}>Add books to your favorites collection</h1>
+          <div>
+            <Link to='/catalog' style={{fontSize:'2rem'}}>Check out our catalog</Link>
+          </div>
+        </div>
+      )}
     </div>
     
       );

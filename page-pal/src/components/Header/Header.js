@@ -42,7 +42,7 @@ export default function Header() {
     }
     return(
     <>
-        <img className={styles.headerImg}src="images/Welcome-wave.svg" alt="wave-img" />
+        <img className={styles.headerImg} src="images/Welcome-wave.svg" alt="wave-img" />
         <section className={styles.headerSection}>
             <div className={isOpen ? styles.change : ""} onClick={onHamburgerClick}>
                 <div className={styles.bar1}></div>

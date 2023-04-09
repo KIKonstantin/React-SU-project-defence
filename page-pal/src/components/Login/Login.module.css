@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 .loginSection{
     position:relative;
-    width: 600px;
+    max-width: 450px;
     height:800px;
     top:400px;
     left:50%;
     transform:translate(-50%, -50%);
     border-radius: 25px;
+    overflow: hidden;
     background-color: rgba(255, 255, 255, 1);
 }
 .loginformInput h1{
@@ -17,21 +18,17 @@
     margin-bottom: 22px;
 }
 
-.brandLogoImg{
-    width: 100px;
-}
-
 .loginformInput{
     font-family: 'Indie Flower', cursive;
     color: #002B59;
-    width: 50%;
+    width: 100%;
     height: 100%;
     position: absolute;
-    top:10%;
-    left: 100px;
+    top:22px;
     display: flex;
     flex-direction: column;
     gap:22px;
+    padding:0 18px ;
 }
 .loginformInput input{
     font-size:2rem;

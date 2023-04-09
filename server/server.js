@@ -1322,10 +1322,16 @@
         users: {
             "35c62d76-8152-4626-8712-eeb96381bea8": {
                 email: "peter@abv.bg",
+                username: 'Pesho1216',
+                imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+                favoriteGenre: 'Mystery',
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "847ec027-f659-4086-8032-5173e2f9c93a": {
                 email: "john@abv.bg",
+                username: 'Gosho',
+                imageUrl: 'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
+                favoriteGenre: 'Adventure',
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             }
         },
@@ -1333,38 +1339,6 @@
         }
     };
     var seedData = {
-        games: {
-            "ff436770-76c5-40e2-b231-77409eda7a61": {
-                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "title": "CoverFire",
-                "category": "Action",
-                "maxLevel": "70",
-                "imageUrl": "/images/CoverFire.png",
-                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
-                "_createdOn": 1617194128618,
-            },
-            "1840a313-225c-416a-817a-9954d4609f7c": {
-                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "title": "MineCraft",
-                "category": "Arcade",
-                "maxLevel": "250",
-                "imageUrl": "/images/MineCraft.png",
-                "summary": "Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for. Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for.",
-                "_createdOn": 1617194210928,
-            },
-            "126777f5-3277-42ad-b874-76d043b069cb": {
-                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "title": "Zombie Lang",
-                "category": "Vertical Shooter",
-                "maxLevel": "100",
-                "imageUrl": "/images/ZombieLang.png",
-                "summary": "With it’s own unique story, set between the events of the first movie, Zombieland: Double Tap- Road Trip is a ridiculously fun top-down twin-stick shooter featuring local co-op multiplayer for up to four players. Play as your favorite heroes from the original — Tallahassee, Columbus, Wichita and Little Rock — as well as new unlockable characters from the upcoming sequel.  The game embraces the game-like elements seen in the film by  incorporating everything from the “Rules” to “Zombie Kill of the Week”.  Use your special abilities, an arsenal of weapons and the essential Zombieland rules for survival to stay alive against huge numbers of uniquely grotesque and dangerous undead monstrosities in Zombieland: Double Tap- Road Trip’s story-based campaign mode, wave-based horde mode, and boss battles.",
-                "_createdOn": 1617194295474,
-                
-            }
-        },
-        comments: {
-        },
         books: {
                 "3f2d34c1-5e3b-4f8e-a1b7-906e982beab6": {
                     "_ownerId": '35c62d76-8152-4626-8712-eeb96381bea8',
