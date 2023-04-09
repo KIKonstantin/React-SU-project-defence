@@ -37,7 +37,7 @@ export default function Register(){
     return(
         <section className={styles.loginSection}>
                    {errors && errors.map((m, i) =>(
-                  <MessageBox message={m} id={i} />
+                  <MessageBox message={m} key={i} />
             ))}
                 <form id='login' method="post" onSubmit={onSubmit}>
                 <div className={styles.loginformInput}>

@@ -52,7 +52,6 @@ function App() {
               </Routes>
             </div>
           </div>
-
       </BookProvider>
     </AuthProvider>
   );
