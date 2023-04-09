@@ -6,8 +6,9 @@ import { useEffect } from "react";
 import styles from './EditBook.module.css'
 
 import { useNavigate } from "react-router-dom"
+import { MessageBox } from "../common/MessageBox";
 export default function EditBook() {
-  const { onBookEditSubmit } = useBookContext();
+  const { onBookEditSubmit, errors } = useBookContext();
      const { bookId } = useParams();
      const navigate = useNavigate();
     const bookService = bookServiceFactory();
@@ -34,6 +35,9 @@ export default function EditBook() {
 
     return(
         <section className={styles.createBookContainer}>
+                             {errors && errors.map((m, i) =>(
+                  <MessageBox key={i} message={m} />
+            ))}
         <form id="create" method="POST" onSubmit={onSubmit}>
             <h2>Edit your upload</h2>
             <div className={styles.createInputFields}>

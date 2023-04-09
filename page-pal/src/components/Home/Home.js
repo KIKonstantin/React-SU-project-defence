@@ -52,7 +52,7 @@ export default function Home() {
         <p>Loading...</p>
       ) : (
         <>
-          <h1 style={{width:"100%", borderBottom:'4px solid grey', textAlign:'center', fontSize:'3rem'}}>Trendy Books</h1>
+          <h1 style={{width:"100%", textAlign:'center', fontSize:'3rem'}}>Trendy Books</h1>
         <div className={styles.newestBooks}>
           {lastAddedBooks.map((x) => (
             <LastAdded key={x._id} {...x} />

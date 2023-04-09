@@ -26,7 +26,6 @@ function App() {
           <div className="App">
             <nav>
               <Header />
-
             </nav>
             <div className="main-content">
               <Routes>

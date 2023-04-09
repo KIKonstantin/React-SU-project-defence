@@ -17,6 +17,9 @@ export default function CreateBook(){
 
     return(
         <section className={styles.createBookContainer}>
+                 {errors && errors.map((m, i) =>(
+                  <MessageBox key={i} message={m} />
+            ))}
             <form id="create" method="POST" onSubmit={onSubmit}>
                 <h2>Post a new book</h2>
                 <div className={styles.createInputFields}>
@@ -84,9 +87,7 @@ export default function CreateBook(){
                     <input type="submit" className={styles.submitBtn} value="Post your new passion" />
                 </div>
             </form>    
-            {errors && errors.map((m, i) =>(
-                  <MessageBox key={i} message={m} />
-            ))}
+       
         </section>
     )
 }

@@ -55,6 +55,7 @@ export const AuthProvider = ({  // --> Component
         try {
             const result = await authService.register(registerData);
             if(result.error){
+                alert(result.error)
                 throw new Error(result.error)
             }
             navigate('/catalog');
