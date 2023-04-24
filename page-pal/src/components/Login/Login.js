@@ -18,33 +18,32 @@ export default function Login(){
     }, onLoginSubmit);
     return(
         <section className={styles.loginSection}>
+            {errors.message}
+            {errors && <MessageBox error={errors.message} />}
                 <form id='login' method="post" onSubmit={onSubmit}>
-                <div className={styles.loginformInput}>
-                    <h1>Login</h1>
-                <input
-                    type="email"
-                    id="email"
-                    name={LoginFormKeys.Email}
-                    placeholder="myEmail@email.com"
-                    value={values[LoginFormKeys.Email]}
-                    onChange={changeHandler}
-                />
-                <input
-                    type="password"
-                    id="login-password"
-                    placeholder='password'
-                    name={LoginFormKeys.Password}
-                    value={values[LoginFormKeys.Password]}
-                    onChange={changeHandler}
-                />
-                <input type="submit" className={styles.loginBtn} value="Login"/>
-                <p className={styles.field}>
-                    <span>If you don't have profile click <Link to="/register">here</Link></span>
-                </p>
-                </div>
-                {errors && errors.map((m, i) =>(
-                  <MessageBox message={m} key={i} />
-            ))}
+                    <div className={styles.loginformInput}>
+                        <h1>Login</h1>
+                        <input
+                            type="email"
+                            id="email"
+                            name={LoginFormKeys.Email}
+                            placeholder="myEmail@email.com"
+                            value={values[LoginFormKeys.Email]}
+                            onChange={changeHandler}
+                        />
+                        <input
+                            type="password"
+                            id="login-password"
+                            placeholder='password'
+                            name={LoginFormKeys.Password}
+                            value={values[LoginFormKeys.Password]}
+                            onChange={changeHandler}
+                        />
+                        <input type="submit" className={styles.loginBtn} value="Login"/>
+                        <p className={styles.field}>
+                            <span>If you don't have profile click <Link to="/register">here</Link></span>
+                        </p>
+                    </div>
                 </form>
         </section>
     )

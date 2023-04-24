@@ -1,7 +1,8 @@
 .messageBox {
     position:absolute;
+    top: 50px;
+    right: 50px;
     width: 500px;
-  
     background-color: #228015;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -9,6 +10,8 @@
     font-size: 2rem;
     margin-bottom: 10px;
     padding: 10px;
+    animation: messageView 5s ease-in-out;
+  
   }
   
   .messageBox:before {
@@ -20,36 +23,15 @@
     width: 20px;
   }
   
-  .messageBox.error:before {
-    background-color: #f44336;
+
+  @keyframes messageView {
+   0%{ 
+    transform: translate(0, 0);
+   }
+   50%{
+    transform: translate(0, 500px);
+   }
+   100%{
+    transform: translate(0, 0);
+   }
   }
-  
-  .messageBox.success:before {
-    background-color: #4caf50;
-  }
-  
-  .messageBox.warning:before {
-    background-color: #ff9800;
-  }
-  
-  .messageBox.info:before {
-    background-color: #2196f3;
-  }
-  
-  .messageBox.error {
-    border-color: #f44336;
-  }
-  
-  .messageBox.success {
-    border-color: #4caf50;
-  }
-  
-  .messageBox.warning {
-    border-color: #ff9800;
-  }
-  
-  .messageBox.info {
-    border-color: #2196f3;
-  }
-  
-  

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { bookServiceFactory } from "../services/bookService";
 
 export const BookContext = createContext();
+
 export const BookProvider = ({
     children
 }) => {
@@ -79,7 +80,6 @@ export const BookProvider = ({
 
     const contextValues = {
         books,
-        errors,
         onCreateBookSubmit,
         deleteBook,
         onBookEditSubmit,

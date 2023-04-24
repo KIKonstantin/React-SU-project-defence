@@ -13,11 +13,10 @@ export const useForm = (initialValues, onSubmitHandler) => {
     const onSubmit = (e) => {
         e.preventDefault();
         onSubmitHandler(values);
-        setValues(initialValues);
+        setValues(values);
     }
 
     const changeValues = (newValues) => {
-        
         setValues(newValues);
     }
 

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import styles from './Register.module.css'
 import { useAuthContext } from '../../contexts/AuthContext'
 import { useForm } from '../../hooks/useForm';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { MessageBox } from '../common/MessageBox';
 
 const RegisterFormKeys = {
@@ -36,9 +36,6 @@ export default function Register(){
 
     return(
         <section className={styles.loginSection}>
-                   {errors && errors.map((m, i) =>(
-                  <MessageBox message={m} key={i} />
-            ))}
                 <form id='login' method="post" onSubmit={onSubmit}>
                 <div className={styles.loginformInput}>
                 <h1>Register</h1>

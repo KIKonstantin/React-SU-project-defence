@@ -1,13 +1,13 @@
 const requester = async (method, url, data) => {
     const options = {
-      headers: {}, // Always set headers, even if empty
+      headers: {},
     };
   
     if (method !== 'GET') {
       options.method = method;
   
       if (data) {
-        options.headers['content-type'] = 'application/json'; // Set content-type header
+        options.headers['content-type'] = 'application/json';
         options.body = JSON.stringify(data);
       }
     }
@@ -17,7 +17,7 @@ const requester = async (method, url, data) => {
       const auth = JSON.parse(serializedAuth);
   
       if (auth.accessToken) {
-        options.headers['X-Authorization'] = auth.accessToken; // Set X-Authorization header
+        options.headers['X-Authorization'] = auth.accessToken;
       }
     }
   
@@ -26,25 +26,28 @@ const requester = async (method, url, data) => {
   
       if (response.status === 204) {
         return {};
+      }else if(response.status === 403){
+        throw new Error('User not found');
+      }else if(response.status === 400) {
+        throw new Error('All fileds are required');
       }
-  
-      if (response.status === 404) {
-        throw new Error('Page not found'); // Create new instance of Error object with error message
+      else if(response.status === 404) {
+        throw new Error('Page not found'); 
       }
   
       const result = await response.json();
   
       if (!response.ok) {
-        throw new Error(response.statusText); // Use response.statusText as error message
+        throw new Error(response.statusText); 
       }
   
       return result;
     } catch (error) {
-      if (error instanceof TypeError) { // Catch specific error type
+      if (error instanceof TypeError) { 
         return { error: 'Network error' };
       }
   
-      return { error }; // Return error object
+      return { error }; 
     }
   };
   

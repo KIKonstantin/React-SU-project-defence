@@ -1,8 +1,7 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext} from "react";
 import { authServiceFactory } from "../services/authService";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useLocalStorage";
-
 export const AuthContext = createContext(); // --> Context
 
 export const AuthProvider = ({  // --> Component
@@ -10,48 +9,30 @@ export const AuthProvider = ({  // --> Component
 }) => {
     const [auth, setAuth] = useLocalStorage('auth', {});
     const authService =  authServiceFactory(auth.accessToken);
-    let errors = [];
+    let errors = {};
     const navigate = useNavigate();
 
 
     const onLoginSubmit = async (data) => {
         if(data.email === '' || data.password === ''){
-            errors.push('All fields are required!')
+            errors.message = 'All fields are required'; 
         }
-        if(errors.length > 0) {
-            return data;
-        } 
         try {
             const result = await authService.login(data);
-            if(result.error?.message === 'Forbidden'){
-                throw new Error('User was not found!')
-            }
             if(result.error){
                 throw new Error(result.error)
             }
             setAuth(result);
             navigate('/catalog');
         } catch (error) {
-            alert(error.message);
+            localStorage.clear();
+            errors = error.message;
+            return errors;
         }
         
     };
     const onRegisterSubmit = async (values) => {
-    const {confirmPassword, ...registerData } = values;
-        if(
-            registerData.username === '' ||
-            registerData.email === '' ||
-            registerData.genre === '' ||
-            registerData.password === '' ||
-            confirmPassword === ''
-        ){
-            errors.push('All fields except photo url are required!')
-        }else if(confirmPassword !== registerData.password){
-            errors.push('Passwords mismatch')
-        }
-        if(errors.length > 0) {
-            return registerData;
-        } 
+    const {...registerData } = values;
         try {
             const result = await authService.register(registerData);
             if(result.error){
@@ -61,12 +42,15 @@ export const AuthProvider = ({  // --> Component
             navigate('/catalog');
             setAuth(result);
         } catch (error) {
+            errors = error.message;
+            localStorage.clear();
             alert(error.message)
         }
     };
     const onLogout = async () => {
         try {
             await authService.logout();
+            localStorage.clear();
             setAuth({});
             
         } catch (error) {
